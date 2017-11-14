@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    @foreach(var error in ViewBag.Errors){
+        <p>@error</p>
+    }
+    <form action="/Survey" method="POST"> 
+        Your Name: <input type="text" name="yourName">
+        Dojo Location: 
+            <select name="location">
+                <option value="sanJose">San Jose</option>
+                <option value="seattle">Seattle</option>
+                <option value="losAngeles">Los Angeles</option>
+                <option value="dallas">Dallas</option>
+            </select>
+        Favorite Language:
+            <select name="language">
+                <option value="python">Python</option>
+                <option value="c#">C#</option>
+                <option value="javaScript">JavaScript</option>
+                <option value="mean">MEAN</option>
+            </select>
+        Comment (optional): <input type="text" name="comment">
+    </form>
+    
+</body>
+</html>
