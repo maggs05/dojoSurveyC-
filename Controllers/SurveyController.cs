@@ -7,21 +7,22 @@ namespace dojoSurvey.Controllers{
         [HttpGet]
         [Route("")]
         public IActionResult Index(){
-            ViewBag.Errors=new List<string>();
+            ViewBag.Errors = new List<string>();
             return View();
         }
         [HttpPost]
-        [Route("Process")]
-        public IActionResult Process(string yourName, string location, string language, string comment){
+        [Route("process")]
+        public IActionResult Process(string yourName, string location, string language,string comment){
+
             ViewBag.Errors = new List<string>();
             if(yourName == null){
                 ViewBag.Errors.Add("Name cannot be empty!");
             }
             if(location == null){
-                ViewBag.Errors.add("You must select a location!");
+                ViewBag.Errors.Add("You must select a location!");
             }
             if(language == null){
-                ViewBag.Errors.add("Please select a location!");
+                ViewBag.Errors.Add("Please select a location!");
             }
             if(comment == null){
                 comment="";

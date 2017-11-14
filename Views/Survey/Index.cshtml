@@ -10,7 +10,7 @@
     @foreach(var error in ViewBag.Errors){
         <p>@error</p>
     }
-    <form action="/Process" method="post"> 
+    <form action="/process" method="post"> 
         Your Name: <input type="text" name="yourName">
         Dojo Location: 
             <select name="location">
@@ -26,7 +26,7 @@
                 <option value="javaScript">JavaScript</option>
                 <option value="mean">MEAN</option>
             </select>
-        Comment (optional): <input type="text" name="comment">
+        Comment (optional): <textarea type="text" name="comment"></textarea>
         <button type="submit">Submit!</button>
     </form>
     
