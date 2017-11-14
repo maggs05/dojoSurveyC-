@@ -27,7 +27,7 @@ namespace dojoSurvey.Controllers{
             if(comment == null){
                 comment="";
             }
-            if(ViewBag.Error.Count>0){
+            if(ViewBag.Errors.Count>0){
                 return View("Index");
             }
             ViewBag.yourName=yourName;
