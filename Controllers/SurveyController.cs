@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 namespace dojoSurvey.Controllers{
     public class SurveyController: Controller{
+        
         [HttpGet]
         [Route("")]
         public IActionResult Index(){
@@ -10,7 +11,7 @@ namespace dojoSurvey.Controllers{
             return View();
         }
         [HttpPost]
-        [Route("process")]
+        [Route("Process")]
         public IActionResult Process(string yourName, string location, string language, string comment){
             ViewBag.Errors = new List<string>();
             if(yourName == null){
@@ -21,6 +22,9 @@ namespace dojoSurvey.Controllers{
             }
             if(language == null){
                 ViewBag.Errors.add("Please select a location!");
+            }
+            if(comment == null){
+                comment="";
             }
             if(ViewBag.Error.Count>0){
                 return View("Index");
